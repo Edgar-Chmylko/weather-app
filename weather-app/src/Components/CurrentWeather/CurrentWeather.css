@@ -1,0 +1,26 @@
+.card-container{
+    height: 35vh;
+    width: 50%;
+    margin: auto;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 65px;
+}
+.city-name {
+    font-size: 1.5rem;
+}
+
+.current-weather{
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-align: left;
+}
+
+.weather-descrition{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.weather-data {
+    margin: 5px;
+}
