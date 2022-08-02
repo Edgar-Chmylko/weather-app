@@ -4,6 +4,7 @@ import BarLoader from "react-spinners/BarLoader"
 import axios from "axios"
 import CurrentWeather from './Components/CurrentWeather/CurrentWeather'
 import Forecast from './Components/Forecast/Forecast'
+import Day from './Components/Icons/day.svg'
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
       }).catch((error)=>{
         alert(`City not found`)
       })
-    },2500)
+    },1500)
     
 
   }
@@ -41,15 +42,14 @@ function App() {
       <div className='app__container d-flex center'>
         <div className='container'>
           <div className="top-container d-flex center">
-            <input type='search' 
-              placeholder='Enter city name' 
+            <input type='search'
               className='SearchBar'
               value={location}
               onChange={event => setLocation(event.target.value)}
               onKeyPress={searchLocation}
             ></input>
             </div>
-            <div className="middle-container d-flex center">
+            <div className="middle-container d-flex center column">
               { data.location ? <CurrentWeather {...data}/> : <div className='empty-placeholder'></div>}
               {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
             </div>
