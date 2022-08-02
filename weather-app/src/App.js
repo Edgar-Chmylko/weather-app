@@ -3,7 +3,7 @@ import './App.css'
 import BarLoader from "react-spinners/BarLoader"
 import axios from "axios"
 import CurrentWeather from './Components/CurrentWeather/CurrentWeather'
-import WeatherCard from './Components/WeatherCard/WeatherCard'
+import Forecast from './Components/Forecast/Forecast'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       setData({})
       
   },[])
-  const url= `http://api.weatherapi.com/v1/forecast.json?key=da096ae963ec4eb19a362334223006&q=${location}&days=3`
+  const url= `http://api.weatherapi.com/v1/forecast.json?key=da096ae963ec4eb19a362334223006&q=${location}&days=4`
 
 
 
@@ -54,9 +54,7 @@ function App() {
               {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
             </div>
             <div className="bottom-container d-flex row center">
-            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
-            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
-            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
+            { data.location ? <Forecast {...data}/> : <div className='empty-placeholder'></div>}
             </div>
           </div>
         </div>
