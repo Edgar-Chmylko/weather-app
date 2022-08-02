@@ -4,3 +4,9 @@
     font-family: monospace;
     box-sizing: border-box;
 }
+
+#root{
+    background-image: url('../public/images/main-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

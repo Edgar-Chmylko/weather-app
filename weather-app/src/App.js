@@ -3,6 +3,7 @@ import './App.css'
 import BarLoader from "react-spinners/BarLoader"
 import axios from "axios"
 import CurrentWeather from './Components/CurrentWeather/CurrentWeather'
+import WeatherCard from './Components/WeatherCard/WeatherCard'
 
 
 function App() {
@@ -14,18 +15,22 @@ function App() {
       setData({})
       
   },[])
-  const url= `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=8e5db52e02e347c69d892563ce2277d3`
+  const url= `http://api.weatherapi.com/v1/forecast.json?key=da096ae963ec4eb19a362334223006&q=${location}&days=3`
+
 
 
   const searchLocation = (event) => {
+    console.log(url)
     if (event.key === 'Enter'){
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
       axios.get(url).then((response)=> {
         setData(response.data)
+      }).catch((error)=>{
+        alert(`City not found`)
       })
-    },1000)
+    },2500)
     
 
   }
@@ -33,26 +38,28 @@ function App() {
 
   return (
     <>
-      <div className='app__container'>
+      <div className='app__container d-flex center'>
         <div className='container'>
           <div className="top-container d-flex center">
             <input type='search' 
-            placeholder='Enter city name' 
-            className='SearchBar'
-            value={location}
-            onChange={event => setLocation(event.target.value)}
-            onKeyPress={searchLocation}
+              placeholder='Enter city name' 
+              className='SearchBar'
+              value={location}
+              onChange={event => setLocation(event.target.value)}
+              onKeyPress={searchLocation}
             ></input>
-          </div>
-          <div className="middle-container d-flex center column">
-            { data.name ? <CurrentWeather {...data}/>: <div className='empty-placeholder'></div>}
-            {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
-          </div>
-          <div className="bottom-container">
-
+            </div>
+            <div className="middle-container d-flex center">
+              { data.location ? <CurrentWeather {...data}/> : <div className='empty-placeholder'></div>}
+              {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
+            </div>
+            <div className="bottom-container d-flex row center">
+            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
+            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
+            { data.location ? <WeatherCard {...data}/> : <div className='empty-placeholder'></div>}
+            </div>
           </div>
         </div>
-      </div>
     </>
   )
 }

@@ -1,9 +1,13 @@
 import React from 'react'
 import "./WeatherCard.css"
 
-function WeatherCard() {
+function WeatherCard({forecast}) {
   return (
-    <div>WeatherCard</div>
+    <>
+      <div className="forecast-container d-flex center column">
+        
+      </div>
+    </>
   )
 }
 

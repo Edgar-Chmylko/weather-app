@@ -16,22 +16,46 @@
 
 .app__container{
   margin: auto;
+  height: 100vh;
+ 
 }
 
 .container{
-  width: 75%;
-  height: 100vh;
+  width: 60%;
+  height: 90%;
   margin: auto;
   text-align: center;
-  background-color: rgba(33, 33, 33, 0.5);
+  background: linear-gradient(135deg,rgba(255,255,255,0),rgba(255,255,255,0.1));
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.18) ;
+  box-shadow: 0px 12px 24px 5px rgba(33,33,33,0.18);
 }
 
 .SearchBar{
-  width: 50%;
-  height: 45px;
-  border-radius: 25px;
+  width: 35%;
+  padding: 20px 10px;
+  border-radius: 50px;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(33,33,33,0.3),rgba(33,33,33,0.5));
+  backdrop-filter: blur(10px);
+  color: #f8f8f8;
+  outline : none;
+  border: none;
+  transition: ease-in-out 0.3s;
+}
+.SearchBar:focus{
+  width: 50%;
+  border-radius: 15px;
+  padding:15px;
+  background: linear-gradient(135deg, rgba(43,23,13,0.2),rgba(43,23,13,0.4));
+  box-shadow: 4px 4px 5px 2px rgba(33,33,33,0.7);
+  font-size: 1.6rem;
+}
+.SearchBar:hover{
+  box-shadow: 4px 4px 5px 2px rgba(33,33,33,0.7);
 }
 
 .top-container{
@@ -45,7 +69,7 @@
 }
 .loading{
   height: 150px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 1);
   width: 150px;
   margin: auto;
   border-radius: 25px;
@@ -55,3 +79,9 @@
   height: 35vh;
   width: 50%;
 }
+
+.bottom-container{
+  height: 33%;
+  width: 50%;
+}
+
