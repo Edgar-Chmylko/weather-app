@@ -2,10 +2,20 @@
     width: 30%;
     height: 70%;
     border-radius: 15px;
-    background: linear-gradient(260deg, rgba(255,255,255,0.6),rgba(255,255,255,0.3));
+    background: linear-gradient(260deg, rgba(255,255,255,0.6),rgba(255,255,255,0.7));
+    transition: ease-in-out 0.3s;
+
 }
 
 .text-highligh{
     font-size: 1.1rem;
     font-weight: 900;
+}
+
+.forecast-container:hover{
+    box-shadow: 6px 6px 5px 2px rgba(33,33,33,0.7);
+}
+
+.forecast-icon{
+    width: 25%;
 }
