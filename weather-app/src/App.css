@@ -46,8 +46,8 @@
   background-position:center;
   background-repeat: no-repeat;
   background-size: 30px;
-  color: rgba(255, 252, 252, 0)
-;  outline : none;
+  color: rgba(255, 252, 252, 0);  
+  outline : none;
   border: none;
   transition: ease-in-out 0.3s;
 }
@@ -60,6 +60,9 @@
   box-shadow: 0px 0px 25px 5px rgba(26, 209, 148, 0.29);
   font-size: 1.6rem;
   color: #333;
+  background-position: right;
+
+
   
 }
 
@@ -86,6 +89,7 @@
   0%{border-radius: 0px; opacity: 0;}
   100%{border-radius: 100px; opacity: 1;}
 }
+
 
 .empty-placeholder{
   height: 35vh;

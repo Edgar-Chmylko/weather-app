@@ -3,12 +3,15 @@ import WeatherCard from '../WeatherCard/WeatherCard'
 import "./Forecast.css"
 
 function Forecast({forecast}) {
-    const tomorrow = forecast.forecastday[1];
-    const dayAfterTomorrow = forecast.forecastday[2];
+    const one = forecast.forecastday[1];
+    const two = forecast.forecastday[2];
+
   return (
     <>
-        <WeatherCard {...tomorrow} />
-        <WeatherCard {...dayAfterTomorrow} />
+      <div className="forecast d-flex center row">
+        <WeatherCard {...one} />
+        <WeatherCard {...two} />
+      </div>
     </>
   )
 }

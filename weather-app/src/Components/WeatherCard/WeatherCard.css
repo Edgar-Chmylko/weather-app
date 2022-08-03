@@ -1,21 +1,26 @@
 .forecast-container{
     width: 30%;
-    height: 70%;
-    border-radius: 25px;
-    background: linear-gradient(260deg, rgba(255,255,255,0.6),rgba(255,255,255,0.7));
+    height: 50%;
     transition: ease-in-out 0.3s;
-
+    padding-bottom: 15px;
+    margin: 0;
 }
 
 .text-highligh{
     font-size: 1rem;
     font-weight: 900;
-}
-
-.forecast-container:hover{
-    box-shadow: 0px 0px 25px 5px rgba(26, 209, 148, 0.29);
+    gap:15px;
 }
 
 .forecast-icon{
     width: 25%;
+}
+
+.border-card{
+    border-right: 1px solid #333;
+    height: 60px;
+}
+
+.border-card:last-child{
+    display: none;
 }
