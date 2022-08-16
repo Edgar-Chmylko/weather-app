@@ -17,7 +17,7 @@ function App() {
       setData({})
   },[])
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=`
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=`
   const key = 'da096ae963ec4eb19a362334223006'
   const api = `${url}${key}&q=${location}&days=7`
    
