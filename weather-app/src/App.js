@@ -29,7 +29,7 @@ function App() {
       axios.get(api).then((response)=> {
         setData(response.data)
       }).catch((error)=>{
-        alert(`City not found`)
+        alert(`${location} not found`)
       })
     },1500)
   }
