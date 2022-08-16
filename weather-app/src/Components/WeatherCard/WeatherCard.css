@@ -17,8 +17,8 @@
 }
 
 .border-card{
-    border-right: 1px solid #333;
-    height: 60px;
+    border-right: 2px solid #333;
+    height: 100px;
 }
 
 .border-card:last-child{

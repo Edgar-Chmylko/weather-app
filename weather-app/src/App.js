@@ -4,6 +4,7 @@ import BarLoader from "react-spinners/BarLoader"
 import axios from "axios"
 import CurrentWeather from './Components/CurrentWeather/CurrentWeather'
 import Forecast from './Components/Forecast/Forecast'
+import CurrentLocation from './Components/CurrentLocation/CurrentLocation'
 
 
 function App() {
@@ -17,15 +18,20 @@ function App() {
       setData({})
   },[])
 
-  const url= `http://api.weatherapi.com/v1/forecast.json?key=da096ae963ec4eb19a362334223006&q=${location}&days=7`
-
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=`
+  const key = 'da096ae963ec4eb19a362334223006'
+  const api = `${url}${key}&q=${location}&days=7`
+  const coords = {
+    lat : '',
+    lon : ''
+  }
 
   const searchLocation = (event) => {
     if (event.key === 'Enter'){
     setLoading(true)
     setTimeout(()=>{
       setLoading(false)
-      axios.get(url).then((response)=> {
+      axios.get(api).then((response)=> {
         setData(response.data)
       }).catch((error)=>{
         alert(`City not found`)
@@ -49,7 +55,7 @@ function App() {
             ></input>
             </div>
             <div className="middle-container d-flex center column">
-              { data.location ? <CurrentWeather {...data}/> :<div className='empty-placeholder'></div> }
+              { data.location ? <CurrentWeather {...data}/> :<CurrentLocation /> }
               {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
             </div>
             <div className="bottom-container d-flex row center">

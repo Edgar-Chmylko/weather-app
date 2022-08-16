@@ -13,7 +13,7 @@ function CurrentWeather({location,current}) {
               <h5>{location.localtime.replace("2022-","")}</h5>
             </div>
             <img src={current.condition.icon} alt={current.condition.text} className="weather-icon"/>
-            <div className="current-weather d-flex center">
+            <div className="current-weather d-flex ">
               <p className='weather-data'><img src={Temperature} alt="" className='icon' />  {current.temp_c.toFixed()}°C</p>
               <div className="border"></div>
               <p className='weather-data'>Feels like  {current.feelslike_c.toFixed()}°C</p>
