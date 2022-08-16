@@ -39,8 +39,9 @@
 
  .border{
     margin: 10px 5px;
-    height: 100%;
-    border-left: 2px solid black;
+    height: 60%;
+    border-left: 2px solid #333;
+    opacity: 0.5;
  }
 
 @media  screen and (max-width:1110px) {
@@ -62,3 +63,17 @@
         width: 90%;
     }
 }
+
+@media screen and (max-height:800px) {
+
+    .current-weather{
+        font-size: 0.8rem;
+    }
+    .border{
+        height: 60%;
+    }
+    .city-name{
+        font-size: 1rem;
+    }
+    
+  }

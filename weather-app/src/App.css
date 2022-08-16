@@ -125,7 +125,7 @@
   }
 }
 
-@media screen and (max-width:795px) {
+@media screen and (max-width:795px){
   .SearchBar{
     width: 15%;
   }
@@ -145,3 +145,5 @@
     width: 100%;
   }
 }
+
+
