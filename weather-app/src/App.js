@@ -4,7 +4,6 @@ import BarLoader from "react-spinners/BarLoader"
 import axios from "axios"
 import CurrentWeather from './Components/CurrentWeather/CurrentWeather'
 import Forecast from './Components/Forecast/Forecast'
-import CurrentLocation from './Components/CurrentLocation/CurrentLocation'
 
 
 function App() {
@@ -21,11 +20,7 @@ function App() {
   const url = `http://api.weatherapi.com/v1/forecast.json?key=`
   const key = 'da096ae963ec4eb19a362334223006'
   const api = `${url}${key}&q=${location}&days=7`
-  const coords = {
-    lat : '',
-    lon : ''
-  }
-
+   
   const searchLocation = (event) => {
     if (event.key === 'Enter'){
     setLoading(true)
@@ -39,9 +34,6 @@ function App() {
     },1500)
   }
 }
-
-
-
   return (
     <>
       <div className='app__container d-flex center' >
@@ -55,7 +47,7 @@ function App() {
             ></input>
             </div>
             <div className="middle-container d-flex center column">
-              { data.location ? <CurrentWeather {...data}/> :<CurrentLocation /> }
+              { data.location ? <CurrentWeather {...data}/> : <div className='empty-placeholder'></div>}
               {loading ? <div className='on-top loading d-flex center'><BarLoader /></div> :null}
             </div>
             <div className="bottom-container d-flex row center">

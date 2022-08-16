@@ -42,3 +42,23 @@
     height: 100%;
     border-left: 2px solid black;
  }
+
+@media  screen and (max-width:1110px) {
+    
+    .card-container{
+        width: 70%;
+    }
+}
+@media  screen and (max-width:795px) {
+    
+    .card-container{
+        width: 90%;
+    }
+}
+
+@media  screen and (max-width:620px) {
+    
+    .card-container{
+        width: 90%;
+    }
+}

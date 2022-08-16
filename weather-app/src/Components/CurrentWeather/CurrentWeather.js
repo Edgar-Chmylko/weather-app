@@ -8,11 +8,13 @@ function CurrentWeather({location,current}) {
   return (
     <>
         <div className="card-container d-flex center column">
+          <div className="city-information">
             <div className="city-name">
               <h1>{location.name}</h1>
               <h5>{location.localtime.replace("2022-","")}</h5>
             </div>
             <img src={current.condition.icon} alt={current.condition.text} className="weather-icon"/>
+          </div>
             <div className="current-weather d-flex ">
               <p className='weather-data'><img src={Temperature} alt="" className='icon' />  {current.temp_c.toFixed()}°C</p>
               <div className="border"></div>
